@@ -1,4 +1,4 @@
-module github.com/Perthanakrit/go-vault
+module github.com/Perthanakrit/cs-472-vault
 
 go 1.25.0
 
