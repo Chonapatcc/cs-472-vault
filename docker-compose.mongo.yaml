@@ -1,0 +1,21 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    volumes:
+      - mongodb-data:/data/db
+    env_file:
+      - ./secrets/mongo.env
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+    networks:
+      - vault-app
+
+volumes:
+  mongodb-data:
+
+networks:
+  vault-app:
+    external: true
+    name: vault-app
